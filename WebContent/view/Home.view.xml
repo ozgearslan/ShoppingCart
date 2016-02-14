@@ -1,0 +1,27 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.Home"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page title="Shopping Cart" >
+		<subHeader>
+			<Toolbar>
+				<SearchField liveChange="onSearch" width="100%" />
+			</Toolbar>
+		</subHeader>
+		<List id="listid" select="handleListSelect" headerText="Categories" 	mode="None" items="{/}">
+			<!-- TYPE UNUTMA -->
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{CategoryName}"  number="{NumberOfProducts}" >
+				<attributes>
+					<ObjectAttribute text="Category: {Category}" class="Number"/>
+				</attributes>
+				<firstStatus>
+					<ObjectStatus text="" />
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+<footer>
+			<Toolbar>
+			</Toolbar>
+		</footer>
+	</Page>
+
+</core:View>

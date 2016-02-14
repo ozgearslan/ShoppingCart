@@ -1,0 +1,33 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.Master"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page title="Products" showNavButton="true" navButtonPress="handleNavButtonPress">
+
+
+		<List id="productList" select="handleListSelect" 
+		items="{/Products}"
+		headerText="">
+			<!-- TYPE UNUTMA -->
+			<ObjectListItem type="Active" press="handleListItemPress"  
+			         icon="{
+							path : 'PictureUrl',
+							formatter: 'util.Formatter.pictureUrl'
+						}"
+				title="{Name}" number="{Price}" numberUnit="EUR">
+				<attributes>
+					<ObjectAttribute text="Category: {Category}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus text="{SupplierName}" />
+
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+		<footer>
+			<Toolbar>
+			</Toolbar>
+		</footer>
+		
+
+	</Page>
+
+</core:View>
